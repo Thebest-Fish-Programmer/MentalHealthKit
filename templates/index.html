@@ -93,27 +93,61 @@
                 inset 0 1px 1px rgba(255, 255, 255, 0.5),
                 0 12px 28px rgba(0, 0, 0, 0.45);
         }
+
+        .glass2 {
+            width: 90%;
+            max-width: 750px;
+            padding: 30px;
+            border-radius: 24px;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.15),
+                    rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(18px) saturate(160%);
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.45),
+                inset 0 1px 1px rgba(255, 255, 255, 0.35);
+            margin: auto;
+            transition: all 0.25s ease;
+        }
+
+        .glass2:hover {
+            transform: translateY(-10px);
+        }
     </style>
 </head>
 
 <body>
     <div class="glass">
         <img src="/static/Images/TopLogo.png" alt="SaberCat Logo" style="width:150px;height:auto;margin-bottom:20px;">
-        <h1>Welcome to SaberCat Project 101</h1>
+        <h1>Welcome to School Skills & Mental Health Toolkit</h1>
         <h3>by Ashvath Gupta</h3>
 
         <p>
-            This is the home page of the SaberCat Project 101 application.
+            This is Ashvath Gupta's SaberCat 101 Project, designed to provide resources for mental health and executive
+            functioning skills.
         </p>
 
-        <div class="buttons">
-            <a class="glass-btn" href="/MentalHealthToolKit">
-                Go to Mental Health Tool Kit
-            </a>
+        <h3>
+            Choose a toolkit below to get started!
+        </h3>
+        <p>
+            The Mental Health Tool Kit offers resources and strategies to support emotional well-being, while the
+            Executive
+            Functioning Tool Kit focuses on enhancing skills like organization, time management, and goal setting.
+        </p>
 
-            <a class="glass-btn" href="/ExecutiveFunctuoningToolKit">
-                Executive Functioning Tool Kit
-            </a>
+        <div class="glass2">
+            <div class="buttons">
+                <a class="glass-btn" href="/MentalHealthToolKit">
+                    Go to Mental Health Tool Kit
+                </a>
+
+                <a class="glass-btn" href="/ExecutiveFunctuoningToolKit">
+                    Executive Functioning Tool Kit
+                </a>
+            </div>
         </div>
     </div>
 </body>
