@@ -78,6 +78,11 @@
             gap: 20px;
             flex-wrap: wrap;
             justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .buttons:hover {
+            transform: scale(1.02);
         }
 
         /* Glass buttons */
@@ -101,7 +106,7 @@
         }
 
         .glass-btn:hover {
-            transform: translateY(-3px);
+            transform: scale(2);
             background: linear-gradient(135deg,
                     rgba(255, 255, 255, 0.5),
                     rgba(255, 255, 255, 0.15));
