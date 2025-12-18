@@ -115,6 +115,103 @@
         .glass2:hover {
             transform: translateY(-10px);
         }
+
+        /* Premium Sparkle Title */
+        h2 {
+            position: relative;
+            display: inline-block;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+            color: #ffffff;
+
+            /* Soft glow */
+            text-shadow:
+                0 0 6px rgba(255, 255, 255, 0.4),
+                0 0 14px rgba(120, 255, 180, 0.35);
+
+            overflow: hidden;
+        }
+
+        /* Main shimmer sweep */
+        h2::before {
+            content: "";
+            position: absolute;
+            top: -60%;
+            left: -120%;
+            width: 60%;
+            height: 220%;
+            background: linear-gradient(120deg,
+                    transparent 0%,
+                    rgba(255, 255, 255, 0.9) 45%,
+                    rgba(180, 255, 220, 0.9) 50%,
+                    rgba(255, 255, 255, 0.9) 55%,
+                    transparent 100%);
+            transform: rotate(25deg);
+            animation: shimmerSweep 3.8s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* Tiny sparkle particles */
+        h2::after {
+            content: "✦ ✧ ✦";
+            position: absolute;
+            top: 50%;
+            left: 10%;
+            transform: translateY(-50%);
+            font-size: 0.7rem;
+            letter-spacing: 14px;
+            color: rgba(200, 255, 230, 0.9);
+            opacity: 0;
+            animation: sparkleTwinkle 4.5s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        /* Animations */
+        @keyframes shimmerSweep {
+            0% {
+                left: -120%;
+                opacity: 0;
+            }
+
+            25% {
+                opacity: 1;
+            }
+
+            50% {
+                left: 140%;
+                opacity: 1;
+            }
+
+            100% {
+                left: 140%;
+                opacity: 0;
+            }
+        }
+
+        @keyframes sparkleTwinkle {
+
+            0%,
+            60% {
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8);
+            }
+
+            70% {
+                opacity: 1;
+                transform: translateY(-50%) scale(1);
+            }
+
+            85% {
+                opacity: 0.6;
+                transform: translateY(-50%) scale(1.1);
+            }
+
+            100% {
+                opacity: 0;
+                transform: translateY(-50%) scale(0.8);
+            }
+        }
     </style>
 </head>
 
@@ -122,7 +219,7 @@
     <div class="glass">
         <img src="/static/Images/TopLogo.png" alt="SaberCat Logo" style="width:150px;height:auto;margin-bottom:20px;">
         <h1>Welcome to School Skills & Mental Health Toolkit</h1>
-        <h3>by Ashvath Gupta</h3>
+        <h2>by Ashvath Gupta</h2>
 
         <p>
             This is Ashvath Gupta's SaberCat 101 Project, designed to provide resources for mental health and executive
