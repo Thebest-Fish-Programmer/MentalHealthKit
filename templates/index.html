@@ -14,10 +14,18 @@
             font-family: "Segoe UI", Arial, sans-serif;
             background: radial-gradient(circle at top left, #165425, #0a2414 70%);
             display: flex;
-            align-items: center;
-            justify-content: center;
+            flex-direction: column;
             color: #ffffff;
         }
+
+        .main-content {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+
 
         /* Glass card */
         .glass {
@@ -167,6 +175,14 @@
             pointer-events: none;
         }
 
+        .footer {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
         /* Animations */
         @keyframes shimmerSweep {
             0% {
@@ -216,36 +232,43 @@
 </head>
 
 <body>
-    <div class="glass">
-        <img src="/static/Images/TopLogo.png" alt="SaberCat Logo" style="width:150px;height:auto;margin-bottom:20px;">
-        <h1>Welcome to School Skills & Mental Health Toolkit</h1>
-        <h2>by Ashvath Gupta</h2>
+    <div class="main-content">
+        <div class="glass">
+            <img src="/static/Images/TopLogo.png" alt="SaberCat Logo"
+                style="width:150px;height:auto;margin-bottom:20px;">
+            <h1>Welcome to School Skills & Mental Health Toolkit</h1>
+            <h2>by Ashvath Gupta</h2>
 
-        <p>
-            This is Ashvath Gupta's SaberCat 101 Project, designed to provide resources for mental health and executive
-            functioning skills.
-        </p>
+            <p>
+                This is Ashvath Gupta's SaberCat 101 Project, designed to provide resources for mental health and
+                executive
+                functioning skills.
+            </p>
 
-        <h3>
-            Choose a toolkit below to get started!
-        </h3>
-        <p>
-            The Mental Health Tool Kit offers resources and strategies to support emotional well-being, while the
-            Executive
-            Functioning Tool Kit focuses on enhancing skills like organization, time management, and goal setting.
-        </p>
+            <h3>
+                Choose a toolkit below to get started!
+            </h3>
+            <p>
+                The Mental Health Tool Kit offers resources and strategies to support emotional well-being, while the
+                Executive
+                Functioning Tool Kit focuses on enhancing skills like organization, time management, and goal setting.
+            </p>
 
-        <div class="glass2">
-            <div class="buttons">
-                <a class="glass-btn" href="/MentalHealthToolKit">
-                    Go to Mental Health Tool Kit
-                </a>
+            <div class="glass2">
+                <div class="buttons">
+                    <a class="glass-btn" href="/MentalHealthToolKit">
+                        Go to Mental Health Tool Kit
+                    </a>
 
-                <a class="glass-btn" href="/ExecutiveFunctuoningToolKit">
-                    Executive Functioning Tool Kit
-                </a>
+                    <a class="glass-btn" href="/ExecutiveFunctuoningToolKit">
+                        Executive Functioning Tool Kit
+                    </a>
+                </div>
             </div>
         </div>
+    </div>
+    <div class="footer">
+        Made by Ashvath Gupta | SaberCat Project 101 &copy; 2025
     </div>
 </body>
 

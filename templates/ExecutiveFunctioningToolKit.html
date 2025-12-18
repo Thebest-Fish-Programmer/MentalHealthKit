@@ -14,9 +14,24 @@
             font-family: "Segoe UI", Arial, sans-serif;
             background: radial-gradient(circle at top left, #9d0000, #240a0a 70%);
             display: flex;
+            flex-direction: column;
+            color: #ffffff;
+        }
+
+        .main-content {
+            flex: 1;
+            display: flex;
             align-items: center;
             justify-content: center;
-            color: #ffffff;
+            width: 100%;
+        }
+
+        .footer {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* Glass card */
@@ -125,235 +140,257 @@
 </head>
 
 <body>
-    <div class="glass">
-        <h1>Executive Functioning Tool Kit</h1>
+    <div class="main-content">
+        <div class="glass">
+            <h1>Executive Functioning Tool Kit</h1>
 
-        <!-- Tabs -->
-        <div class="tabs">
-            <button class="tab-btn active" onclick="openTab('Pomodoro')">Pomodoro Technique</button>
-            <button class="tab-btn" onclick="openTab('Frog')">Eat The Frog Method</button>
-            <button class="tab-btn" onclick="openTab('Breathing')">Breathing</button>
-            <button class="tab-btn" onclick="openTab('Movement')">Movement & Stretching</button>
-            <button class="tab-btn" onclick="openTab('Humor')">Humor</button>
-            <button class="tab-btn" onclick="openTab('Chunking')">Chunking</button>
-            <button class="tab-btn" onclick="openTab('Reflection')">Self-Reflection</button>
-            <button class="tab-btn" onclick="openTab('PlanB')">Plan B Technique</button>
-            <button class="tab-btn" onclick="openTab('Five')">5-Minute Start</button>
-        </div>
-
-        <div class="tab-content active" style="margin-top: 30px;">
-            <h1>Welcome to the Executive Functioning Tool Kit</h1>
-            <p>Welcome to your Executive Functioning Tool Kit! This kit is designed to help you enhance your executive
-                functioning skills through a variety of practical strategies and techniques. Executive functioning
-                skills are essential for managing time, staying organized, regulating emotions, and achieving goals.
-                Explore the tabs to discover easy-to-follow methods that can help you improve your focus, productivity,
-                and overall cognitive abilities. Let's get started on your journey to better executive functioning!</p>
-        </div>
-
-        <!-- Pomodoro Technique -->
-
-        <div id="Pomodoro" class="tab-content">
-            <h1>Pomodoro Technique</h1>
-            <h2>Helps with: Time Management</h2>
-            <p>The Pomodoro Technique is a time management method that uses a timer to break down work into intervals,
-                traditionally 25 minutes in length, separated by short breaks.</p>
-            <div style="text-align: left;">
-                <p>Steps:</p>
-
-                <ol>
-                    <li>Choose a task to work on.</li>
-                    <li>Set a timer for 25 minutes.</li>
-                    <li>Work on the task until the timer rings.</li>
-                    <li>Take a 5-minute break.</li>
-                    <li>Repeat steps 1-4 four times, then take a longer break (15-30 minutes).</li>
-                </ol>
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab('Pomodoro')">Pomodoro Technique</button>
+                <button class="tab-btn" onclick="openTab('Frog')">Eat The Frog Method</button>
+                <button class="tab-btn" onclick="openTab('Breathing')">Breathing</button>
+                <button class="tab-btn" onclick="openTab('Movement')">Movement & Stretching</button>
+                <button class="tab-btn" onclick="openTab('Humor')">Humor</button>
+                <button class="tab-btn" onclick="openTab('Chunking')">Chunking</button>
+                <button class="tab-btn" onclick="openTab('Reflection')">Self-Reflection</button>
+                <button class="tab-btn" onclick="openTab('PlanB')">Plan B Technique</button>
+                <button class="tab-btn" onclick="openTab('Five')">5-Minute Start</button>
             </div>
+
+            <div class="tab-content active" style="margin-top: 30px;">
+                <h1>Welcome to the Executive Functioning Tool Kit</h1>
+                <p>Welcome to your Executive Functioning Tool Kit! This kit is designed to help you enhance your
+                    executive
+                    functioning skills through a variety of practical strategies and techniques. Executive functioning
+                    skills are essential for managing time, staying organized, regulating emotions, and achieving goals.
+                    Explore the tabs to discover easy-to-follow methods that can help you improve your focus,
+                    productivity,
+                    and overall cognitive abilities. Let's get started on your journey to better executive functioning!
+                </p>
+            </div>
+
+            <!-- Pomodoro Technique -->
+
+            <div id="Pomodoro" class="tab-content">
+                <h1>Pomodoro Technique</h1>
+                <h2>Helps with: Time Management</h2>
+                <p>The Pomodoro Technique is a time management method that uses a timer to break down work into
+                    intervals,
+                    traditionally 25 minutes in length, separated by short breaks.</p>
+                <div style="text-align: left;">
+                    <p>Steps:</p>
+
+                    <ol>
+                        <li>Choose a task to work on.</li>
+                        <li>Set a timer for 25 minutes.</li>
+                        <li>Work on the task until the timer rings.</li>
+                        <li>Take a 5-minute break.</li>
+                        <li>Repeat steps 1-4 four times, then take a longer break (15-30 minutes).</li>
+                    </ol>
+                </div>
+                <div class="buttons">
+                    <a href="https://pomofocus.io/" class="glass-btn" target="_blank">Pomodoro Technique Timer</a>
+                </div>
+            </div>
+
+            <!-- Eat The Frog Method -->
+
+            <div id="Frog" class="tab-content">
+                <h1>Eat The Frog Method</h1>
+                <h2>Helps with: Task Management</h2>
+                <p>The Eat The Frog method involves tackling the most difficult or important task first thing in the
+                    morning, before any distractions arise.</p>
+                <div style="text-align: left;">
+                    <p>Steps:</p>
+
+                    <ol>
+                        <li>Identify your most challenging task of the day.</li>
+                        <li>Do it first thing in the morning, before checking email or social media.</li>
+                        <li>Work on it until it's completed or until you've made significant progress.</li>
+                    </ol>
+                </div>
+            </div>
+
+            <!-- Breathing -->
+
+            <div id="Breathing" class="tab-content">
+                <h1>Breathing</h1>
+                <h2>Helps with: Emotional Self-Control</h2>
+                <p>Breathing can help activate your parasympathetic nervous system, which promotes relaxation and
+                    reduces
+                    stress. Which in stressful situations helps with emotional regulation. There are many ways to breath
+                    in
+                    order to sustain focus and calmness.</p>
+                <div style="text-align: left;">
+                    <p>Techniques:</p>
+
+                    <ul>
+                        <li><strong>Box Breathing:</strong> Inhale for 4 seconds, hold for 4 seconds, exhale for 4
+                            seconds,
+                            hold for 4 seconds. Repeat.</li>
+                        <li><strong>4-7-8 Breathing:</strong> Inhale for 4 seconds, hold for 7 seconds, exhale for 8
+                            seconds.
+                            Repeat.</li>
+                        <li><strong>Diaphragmatic Breathing:</strong> Breathe deeply into your diaphragm (belly) rather
+                            than
+                            shallowly into your chest. Inhale deeply through your nose, allowing your belly to rise,
+                            then
+                            exhale slowly through your mouth.</li>
+                        <li><strong>Focus Breathing:</strong> Focus on your breath, observing each inhale and exhale
+                            without
+                            trying to control it. This helps anchor your attention in the present moment.</li>
+                    </ul>
+                </div>
+
+                <div class="buttons">
+                    <a href="https://www.deepbreathe.app/" class="glass-btn" target="_blank">Deep Breathe App Online
+                        Free</a>
+                </div>
+            </div>
+
+            <!-- Movement & Stretching Section -->
+
+            <div id="Movement" class="tab-content">
+                <h1>Movement & Stretching</h1>
+                <h2>Helps with: Response Self-Control</h2>
+                <p>Movement and stretching can help improve focus, reduce stress, and increase energy levels. Regular
+                    physical activity can also help regulate mood and improve overall well-being.</p>
+                <div style="text-align: left;">
+                    <p>Techniques:</p>
+
+                    <ul>
+                        <li><strong>Walking:</strong> Take a 5-minute walk every hour to break up long periods of
+                            sitting.
+                        </li>
+                        <li><strong>Stretching:</strong> Perform simple stretches to release tension in your muscles.
+                        </li>
+                        <li><strong>Desk Exercises:</strong> Do simple exercises at your desk to keep your body active.
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="buttons">
+                    <a href="https://www.youtube.com/watch?v=-Ts01MC2mIo" class="glass-btn" target="_blank">Sitting Desk
+                        Exercises Video</a>
+                </div>
+            </div>
+
+            <!-- Humor Section -->
+
+            <div id="Humor" class="tab-content">
+                <h1>Humor</h1>
+                <h2>Helps with: Emotional Self-Control</h2>
+                <p>Humor can help reduce stress and anxiety, improve mood, and increase resilience. It can also help you
+                    maintain perspective during difficult times.</p>
+                <div style="text-align: left;">
+                    <p>Techniques:</p>
+
+                    <ul>
+                        <li><strong>Laughter:</strong> Watch a funny video or read something humorous to boost your
+                            mood.
+                        </li>
+                        <li><strong>Playfulness:</strong> Engage in playful activities that bring joy and laughter.</li>
+                        <li><strong>Jokes:</strong> Tell jokes or share funny stories with others.</li>
+                    </ul>
+                </div>
+
+                <div class="buttons">
+                    <a href="https://jokesoftheday.net/" class="glass-btn" target="_blank">Joke of the Day</a>
+                </div>
+            </div>
+
+            <!-- Chunking -->
+
+            <div id="Chunking" class="tab-content">
+                <h1>Chunking</h1>
+                <h2>Helps with: Working Memory</h2>
+                <p>Chunking is a memory technique that involves breaking down large pieces of information into smaller,
+                    manageable chunks. This makes it easier to remember and process information.</p>
+                <div style="text-align: left;">
+                    <p>Steps:</p>
+
+                    <ol>
+                        <li>Identify the information you need to remember.</li>
+                        <li>Break it down into smaller, meaningful chunks.</li>
+                        <li>Group related chunks together.</li>
+                        <li>Use mnemonic devices or associations to help remember each chunk.</li>
+                    </ol>
+                </div>
+            </div>
+
+
+
+            <div id="Reflection" class="tab-content">
+                <h1>Self-Reflection</h1>
+                <h2>Helps with: Metacognition</h2>
+                <p>Self-reflection involves taking time to think about your thoughts, feelings, and actions. It helps
+                    you
+                    understand yourself better and make informed decisions.</p>
+                <div style="text-align: left;">
+                    <p>Techniques:</p>
+
+                    <ul>
+                        <li><strong>Mindfulness:</strong> Practice mindfulness to stay present and aware of your
+                            thoughts
+                            and feelings.</li>
+                        <li><strong>Journaling:</strong> Write down your thoughts and feelings to gain insight into your
+                            experiences.</li>
+                        <li><strong>Goal Setting:</strong> Set goals for yourself and reflect on your progress
+                            regularly.
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+
+
+            <div id="PlanB" class="tab-content">
+                <h1>Plan B Technique</h1>
+                <h2>Helps with: Flexibility & Adaptability</h2>
+                <p>The Plan B Technique involves having a backup plan in case your original plan doesn't work out. This
+                    helps you stay flexible and adapt to changing circumstances.</p>
+                <div style="text-align: left;">
+                    <p>Steps:</p>
+
+                    <ol>
+                        <li>Identify your primary plan or goal.</li>
+                        <li>Consider potential obstacles or challenges that may arise.</li>
+                        <li>Create a backup plan (Plan B) that addresses these challenges.</li>
+                        <li>Be prepared to switch to Plan B if necessary.</li>
+                    </ol>
+                </div>
+            </div>
+
+
+
+            <div id="Five" class="tab-content">
+                <h1>5-Minute Start</h1>
+                <h2>Helps with: Task Initiation</h2>
+                <p>The 5-Minute Start technique involves committing to work on a task for just 5 minutes. This helps
+                    overcome procrastination and builds momentum to continue working.</p>
+                <div style="text-align: left;">
+                    <p>Steps:</p>
+
+                    <ol>
+                        <li>Choose a task you need to work on.</li>
+                        <li>Set a timer for 5 minutes.</li>
+                        <li>Work on the task for the full 5 minutes, no matter what.</li>
+                        <li>After 5 minutes, decide whether to continue or take a break.</li>
+                    </ol>
+                </div>
+            </div>
+
+
+
+            <!-- Footer -->
             <div class="buttons">
-                <a href="https://pomofocus.io/" class="glass-btn" target="_blank">Pomodoro Technique Timer</a>
+                <a href="/" class="glass-btn">Go Back Home</a>
             </div>
         </div>
-
-        <!-- Eat The Frog Method -->
-
-        <div id="Frog" class="tab-content">
-            <h1>Eat The Frog Method</h1>
-            <h2>Helps with: Task Management</h2>
-            <p>The Eat The Frog method involves tackling the most difficult or important task first thing in the
-                morning, before any distractions arise.</p>
-            <div style="text-align: left;">
-                <p>Steps:</p>
-
-                <ol>
-                    <li>Identify your most challenging task of the day.</li>
-                    <li>Do it first thing in the morning, before checking email or social media.</li>
-                    <li>Work on it until it's completed or until you've made significant progress.</li>
-                </ol>
-            </div>
-        </div>
-
-        <!-- Breathing -->
-
-        <div id="Breathing" class="tab-content">
-            <h1>Breathing</h1>
-            <h2>Helps with: Emotional Self-Control</h2>
-            <p>Breathing can help activate your parasympathetic nervous system, which promotes relaxation and reduces
-                stress. Which in stressful situations helps with emotional regulation. There are many ways to breath in
-                order to sustain focus and calmness.</p>
-            <div style="text-align: left;">
-                <p>Techniques:</p>
-
-                <ul>
-                    <li><strong>Box Breathing:</strong> Inhale for 4 seconds, hold for 4 seconds, exhale for 4 seconds,
-                        hold for 4 seconds. Repeat.</li>
-                    <li><strong>4-7-8 Breathing:</strong> Inhale for 4 seconds, hold for 7 seconds, exhale for 8
-                        seconds.
-                        Repeat.</li>
-                    <li><strong>Diaphragmatic Breathing:</strong> Breathe deeply into your diaphragm (belly) rather than
-                        shallowly into your chest. Inhale deeply through your nose, allowing your belly to rise, then
-                        exhale slowly through your mouth.</li>
-                    <li><strong>Focus Breathing:</strong> Focus on your breath, observing each inhale and exhale without
-                        trying to control it. This helps anchor your attention in the present moment.</li>
-                </ul>
-            </div>
-
-            <div class="buttons">
-                <a href="https://www.deepbreathe.app/" class="glass-btn" target="_blank">Deep Breathe App Online
-                    Free</a>
-            </div>
-        </div>
-
-        <!-- Movement & Stretching Section -->
-
-        <div id="Movement" class="tab-content">
-            <h1>Movement & Stretching</h1>
-            <h2>Helps with: Response Self-Control</h2>
-            <p>Movement and stretching can help improve focus, reduce stress, and increase energy levels. Regular
-                physical activity can also help regulate mood and improve overall well-being.</p>
-            <div style="text-align: left;">
-                <p>Techniques:</p>
-
-                <ul>
-                    <li><strong>Walking:</strong> Take a 5-minute walk every hour to break up long periods of sitting.
-                    </li>
-                    <li><strong>Stretching:</strong> Perform simple stretches to release tension in your muscles.</li>
-                    <li><strong>Desk Exercises:</strong> Do simple exercises at your desk to keep your body active.</li>
-                </ul>
-            </div>
-
-            <div class="buttons">
-                <a href="https://www.youtube.com/watch?v=-Ts01MC2mIo" class="glass-btn" target="_blank">Sitting Desk
-                    Exercises Video</a>
-            </div>
-        </div>
-
-        <!-- Humor Section -->
-
-        <div id="Humor" class="tab-content">
-            <h1>Humor</h1>
-            <h2>Helps with: Emotional Self-Control</h2>
-            <p>Humor can help reduce stress and anxiety, improve mood, and increase resilience. It can also help you
-                maintain perspective during difficult times.</p>
-            <div style="text-align: left;">
-                <p>Techniques:</p>
-
-                <ul>
-                    <li><strong>Laughter:</strong> Watch a funny video or read something humorous to boost your mood.
-                    </li>
-                    <li><strong>Playfulness:</strong> Engage in playful activities that bring joy and laughter.</li>
-                    <li><strong>Jokes:</strong> Tell jokes or share funny stories with others.</li>
-                </ul>
-            </div>
-
-            <div class="buttons">
-                <a href="https://jokesoftheday.net/" class="glass-btn" target="_blank">Joke of the Day</a>
-            </div>
-        </div>
-
-        <!-- Chunking -->
-
-        <div id="Chunking" class="tab-content">
-            <h1>Chunking</h1>
-            <h2>Helps with: Working Memory</h2>
-            <p>Chunking is a memory technique that involves breaking down large pieces of information into smaller,
-                manageable chunks. This makes it easier to remember and process information.</p>
-            <div style="text-align: left;">
-                <p>Steps:</p>
-
-                <ol>
-                    <li>Identify the information you need to remember.</li>
-                    <li>Break it down into smaller, meaningful chunks.</li>
-                    <li>Group related chunks together.</li>
-                    <li>Use mnemonic devices or associations to help remember each chunk.</li>
-                </ol>
-            </div>
-        </div>
-
-
-
-        <div id="Reflection" class="tab-content">
-            <h1>Self-Reflection</h1>
-            <h2>Helps with: Metacognition</h2>
-            <p>Self-reflection involves taking time to think about your thoughts, feelings, and actions. It helps you
-                understand yourself better and make informed decisions.</p>
-            <div style="text-align: left;">
-                <p>Techniques:</p>
-
-                <ul>
-                    <li><strong>Mindfulness:</strong> Practice mindfulness to stay present and aware of your thoughts
-                        and feelings.</li>
-                    <li><strong>Journaling:</strong> Write down your thoughts and feelings to gain insight into your
-                        experiences.</li>
-                    <li><strong>Goal Setting:</strong> Set goals for yourself and reflect on your progress regularly.
-                    </li>
-                </ul>
-            </div>
-
-        </div>
-
-
-
-        <div id="PlanB" class="tab-content">
-            <h1>Plan B Technique</h1>
-            <h2>Helps with: Flexibility & Adaptability</h2>
-            <p>The Plan B Technique involves having a backup plan in case your original plan doesn't work out. This
-                helps you stay flexible and adapt to changing circumstances.</p>
-            <div style="text-align: left;">
-                <p>Steps:</p>
-
-                <ol>
-                    <li>Identify your primary plan or goal.</li>
-                    <li>Consider potential obstacles or challenges that may arise.</li>
-                    <li>Create a backup plan (Plan B) that addresses these challenges.</li>
-                    <li>Be prepared to switch to Plan B if necessary.</li>
-                </ol>
-            </div>
-        </div>
-
-
-
-        <div id="Five" class="tab-content">
-            <h1>5-Minute Start</h1>
-            <h2>Helps with: Task Initiation</h2>
-            <p>The 5-Minute Start technique involves committing to work on a task for just 5 minutes. This helps
-                overcome procrastination and builds momentum to continue working.</p>
-            <div style="text-align: left;">
-                <p>Steps:</p>
-
-                <ol>
-                    <li>Choose a task you need to work on.</li>
-                    <li>Set a timer for 5 minutes.</li>
-                    <li>Work on the task for the full 5 minutes, no matter what.</li>
-                    <li>After 5 minutes, decide whether to continue or take a break.</li>
-                </ol>
-            </div>
-        </div>
-
-
-
-        <!-- Footer -->
-        <div class="buttons">
-            <a href="/" class="glass-btn">Go Back Home</a>
-        </div>
+    </div>
+    <div class="footer">
+        Made by Ashvath Gupta | SaberCat Project 101 &copy; 2025
     </div>
 
     <script>

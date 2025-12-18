@@ -14,9 +14,25 @@
             font-family: "Segoe UI", Arial, sans-serif;
             background: radial-gradient(circle at top left, #541652, #240a20 70%);
             display: flex;
+            flex-direction: column;
+            color: #ffffff;
+        }
+
+
+        .main-content {
+            flex: 1;
+            display: flex;
             align-items: center;
             justify-content: center;
-            color: #ffffff;
+            width: 100%;
+        }
+
+        .footer {
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
         }
 
         /* Glass card */
@@ -97,17 +113,22 @@
 </head>
 
 <body>
-    <div class="glass">
-        <h1>404</h1>
+    <div class="main-content">
+        <div class="glass">
+            <h1>404</h1>
 
-        <p>
-            You somehow broke the internet... or at least this page. Don't worry return to safety by clicking the button
-            below.
-        </p>
+            <p>
+                You somehow broke the internet... or at least this page. Don't worry return to safety by clicking the
+                button
+                below.
+            </p>
 
-        <button class="glass-btn" onclick="window.location.href='/'">Go back to Safety... aka Home</button>
+            <button class="glass-btn" onclick="window.location.href='/'">Go back to Safety... aka Home</button>
 
+        </div>
     </div>
+    <div class="footer">
+        Made by Ashvath Gupta | SaberCat Project 101 &copy; 2025
     </div>
 </body>
 
