@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaberCat Project 101 | Mental Health</title>
+    <link rel="shortcut icon" href="/static/Images/TopLogo.png" type="image/png">
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: radial-gradient(circle at top left, #034b7b, #0a1524 70%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+        }
+
+        /* Glass card */
+        .glass {
+            width: 90%;
+            max-width: 750px;
+            padding: 40px;
+            border-radius: 24px;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.25),
+                    rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(18px) saturate(160%);
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.45),
+                inset 0 1px 1px rgba(255, 255, 255, 0.35);
+        }
+
+        .glass2 {
+            width: 90%;
+            max-width: 750px;
+            padding: 0.1px;
+            border-radius: 24px;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.15),
+                    rgba(255, 255, 255, 0.05));
+            backdrop-filter: blur(18px) saturate(160%);
+            -webkit-backdrop-filter: blur(18px) saturate(160%);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            box-shadow:
+                0 20px 40px rgba(0, 0, 0, 0.45),
+                inset 0 1px 1px rgba(255, 255, 255, 0.35);
+            margin: auto;
+            transition: all 0.25s ease;
+        }
+
+        .glass2:hover {
+            transform: translateY(-5px);
+        }
+
+        h1 {
+            margin-top: 0;
+            text-align: center;
+        }
+
+        p {
+            opacity: 0.9;
+        }
+
+        /* Tabs bar */
+        .tabs {
+            display: flex;
+            gap: 12px;
+            margin: 30px 0;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .tab-btn {
+            padding: 10px 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.18);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.25s ease;
+        }
+
+        .tab-btn.active {
+            background: rgba(255, 255, 255, 0.4);
+            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.45);
+        }
+
+        .tab-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Tab content */
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease;
+            text-align: center;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(5px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Footer buttons */
+        .buttons {
+            margin-top: 35px;
+            text-align: center;
+        }
+
+        .glass-btn {
+            padding: 12px 24px;
+            border-radius: 14px;
+            background: linear-gradient(135deg,
+                    rgba(255, 255, 255, 0.35),
+                    rgba(255, 255, 255, 0.1));
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .glass-btn:hover {
+            transform: translateY(-3px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="glass">
+        <h1>Mental Health Tool Kit</h1>
+        <div class="glass2">
+            <!-- Tabs -->
+            <div class="tabs">
+                <button class="tab-btn active" onclick="openTab('Mindful')">Mindful Breathing</button>
+                <button class="tab-btn" onclick="openTab('Scan')">Body Scan</button>
+                <button class="tab-btn" onclick="openTab('Reframing')">Cognitive Reframing</button>
+                <button class="tab-btn" onclick="openTab('Journaling')">Journaling</button>
+                <button class="tab-btn" onclick="openTab('Grounding')">Grounding Exercises</button>
+                <button class="tab-btn" onclick="openTab('Gratitude')">Gratitude Practice</button>
+                <button class="tab-btn" onclick="openTab('Physical')">Physical Activity</button>
+                <button class="tab-btn" onclick="openTab('Visualization')">Visualization or Guided Imagery</button>
+                <button class="tab-btn" onclick="openTab('Social')">Social Connection</button>
+                <button class="tab-btn" onclick="openTab('Worry')">Scheduled Worry Time</button>
+                <button class="tab-btn" onclick="openTab('Meditation')">Mindful Meditation</button>
+            </div>
+        </div>
+
+
+        <div id="Mindful" class="tab-content active" style="margin-top: 30px;">
+            <h1>MindFul Breathing</h1>
+            <p>Mindful breathing is the practice of intentionally focusing your attention on the sensation of your
+                breath as it enters and leaves your body, helping to calm the nervous system, reduce stress, improve
+                focus, and promote relaxation by gently returning your wandering mind to the present moment</p>
+
+            <div style="text-align: left;">
+                <p>Steps: </p>
+                <ol>
+                    <li><strong>Find a Comfortable Position:</strong> Sit or lie down in a comfortable position. You can
+                        close your eyes if you feel comfortable doing so.</li>
+                    <li><strong>Focus on Your Breath:</strong> Bring your attention to your breath. Notice the sensation
+                        of the air as it enters your nostrils, fills your lungs, and then leaves your body.</li>
+                    <li><strong>Breathe Naturally:</strong> Allow your breath to flow naturally without trying to
+                        control
+                        it. Simply observe the rhythm of your breathing.</li>
+                    <li><strong>Count Your Breaths (Optional):</strong> To help maintain focus, you can count each
+                        inhale
+                        and exhale. For example, inhale (1), exhale (2), inhale (3), exhale (4), and so on, up to 10,
+                        then start over.</li>
+                    <li><strong>Return to the Breath:</strong> If your mind starts to wander (which is normal), gently
+                        bring your attention back to your breath without judgment.</li>
+                    <li><strong>Practice Regularly:</strong> Aim to practice mindful breathing for a few minutes each
+                        day,
+                        gradually increasing the duration as you become more comfortable with the practice.</li>
+                </ol>
+
+            </div>
+
+
+            <div class="buttons">
+                <a href="https://www.va.gov/WHOLEHEALTHLIBRARY/docs/Script-Mindful-Breathing.pdf" class="glass-btn"
+                    target="_blank">Breathing Techniques Walkthrough</a>
+            </div>
+        </div>
+
+
+
+        <div id="Scan" class="tab-content" style="margin-top: 30px;">
+            <h1>Body Scan</h1>
+            <p>A body scan is a mindfulness practice that involves mentally scanning your body from head to toe, paying
+                attention to any sensations, tension, or discomfort you may be experiencing. This practice helps you
+                become more aware of physical sensations and can promote relaxation and stress reduction.</p>
+            <div style="text-align: left;">
+                <p>Steps:</p>
+                <ol>
+                    <li><strong>Find a Comfortable Position:</strong> Lie down or sit comfortably in a quiet space.
+                        Close your eyes or soften your gaze.</li>
+                    <li><strong>Start at the Top of Your Body:</strong> Begin by focusing on the top of your head and
+                        work your way down to your toes.</li>
+                    <li><strong>Notice Sensations:</strong> Pay attention to any sensations, tension, or discomfort you
+                        notice in each part of your body.</li>
+                    <li><strong>Release Tension:</strong> As you notice tension, imagine it melting away with each
+                        exhale.</li>
+                    <li><strong>Maintain Awareness:</strong> Continue scanning your body, staying present with each
+                        sensation without judgment.</li>
+                </ol>
+            </div>
+
+
+            <div class="buttons">
+                <a href="https://www.youtube.com/watch?v=avnwKOIOXFM" class="glass-btn" target="_blank">Body Scan
+                    Narration Script For Relaxation</a>
+            </div>
+        </div>
+
+
+
+        <div id="Reframing" class="tab-content" style="margin-top: 30px;">
+            <h1>Cognitive Reframing</h1>
+
+            <p>Cognitive reframing is a psychological technique that involves changing the way you perceive and
+                interpret a situation or thought in order to alter its emotional impact. By shifting your perspective,
+                you can reduce negative emotions and develop a more positive outlook.</p>
+            <div style="text-align: left;">
+                <p>Steps:</p>
+                <ol>
+                    <li><strong>Identify Negative Thoughts:</strong> Pay attention to your thoughts and identify any
+                        negative or unhelpful ones.</li>
+                    <li><strong>Examine the Evidence:</strong> Challenge the validity of these thoughts by examining the
+                        evidence for and against them.</li>
+                    <li><strong>Consider Alternative Perspectives:</strong> Think about other ways to view the situation
+                        that may be more positive or realistic.</li>
+                    <li><strong>Reframe the Thought:</strong> Replace the negative thought with a more balanced or
+                        positive one.</li>
+                    <li><strong>Practice Regularly:</strong> Make cognitive reframing a regular practice to help build
+                        resilience and improve your overall mindset.</li>
+                </ol>
+            </div>
+        </div>
+
+
+
+        <div id="Journaling" class="tab-content" style="margin-top: 30px;">
+            <h1>Journaling</h1>
+            <p>Journaling is the practice of regularly writing down your thoughts, feelings, and experiences in a
+                personal journal or diary. It can serve as a therapeutic outlet for self-expression, helping to
+                process emotions, gain insights, and promote mental well-being.</p>
+            <div style="text-align: left;">
+                <p>Helps With:</p>
+                <ul>
+                    <li>Emotional Expression</li>
+                    <li>Stress Reduction</li>
+                    <li>Self-Reflection</li>
+                    <li>Problem-Solving</li>
+                    <li>Goal Setting</li>
+                </ul>
+            </div>
+
+
+
+            <div class="buttons">
+                <a href="https://www.decideyourlegacy.com/blog/100-journaling-prompts-for-reflection-insight"
+                    class="glass-btn" target="_blank">Journaling Prompts</a>
+            </div>
+        </div>
+
+
+        <div id="Grounding" class="tab-content" style="margin-top: 30px;">
+            <h1>Grounding Techniques / Exercises</h1>
+            <p>Grounding techniques are strategies used to help individuals stay present and connected to the
+                current moment, especially during times of stress, anxiety, or dissociation. These techniques can
+                help redirect focus away from distressing thoughts or feelings and promote a sense of calm and
+                stability.</p>
+
+            <div style="text-align: left;">
+                <p>Common Grounding Techniques:</p>
+                <ul>
+                    <li><strong>5-4-3-2-1 Technique:</strong> Identify 5 things you can see, 4 things you can touch,
+                        3
+                        things you can hear, 2 things you can smell, and 1 thing you can taste.</li>
+                    <li><strong>Deep Breathing:</strong> Focus on taking slow, deep breaths to help calm your mind
+                        and body.</li>
+                    <li><strong>Physical Sensations:</strong> Hold onto a comforting object, splash cold water on
+                        your
+                        face, or press your feet firmly into the ground to bring awareness to your body.</li>
+                    <li><strong>Mindful Observation:</strong> Choose an object in your environment and observe it
+                        closely,
+                        noting its color, texture, shape, and any other details.</li>
+                    <li><strong>Movement:</strong> Engage in light physical activity, such as stretching or walking,
+                        to
+                        help release tension and refocus your mind.</li>
+                </ul>
+
+            </div>
+        </div>
+
+
+        <div id="Gratitude" class="tab-content" style="margin-top: 30px;">
+            <h1>Gratitude Practice</h1>
+            <p>Gratitude practice involves intentionally focusing on and appreciating the positive aspects of your
+                life. Regularly acknowledging what you are thankful for can enhance your overall well-being,
+                increase happiness, and foster a more optimistic outlook.</p>
+            <div style="text-align: left;">
+                <p>Ways to Practice Gratitude:</p>
+                <ul>
+                    <li><strong>Gratitude Journal:</strong> Write down three things you are grateful for each day.
+                    </li>
+                    <li><strong>Gratitude Letters:</strong> Write letters to people who have had a positive impact
+                        on
+                        your life, expressing your appreciation.</li>
+                    <li><strong>Mindful Gratitude:</strong> Take a moment each day to reflect on the things you
+                        appreciate
+                        in your life, both big and small.</li>
+                    <li><strong>Gratitude Meditation:</strong> Practice meditation focused on feelings of gratitude
+                        and
+                        thankfulness.</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="Physical" class="tab-content" style="margin-top: 30px;">
+            <h1>Physical Activity</h1>
+            <p>Engaging in regular physical activity is essential for maintaining both physical and mental health.
+                Exercise helps reduce stress, improve mood, boost energy levels, and enhance overall well-being.</p>
+            <div style="text-align: left;">
+                <p>Types of Physical Activity:</p>
+                <ul>
+                    <li><strong>Aerobic Exercises:</strong> Activities such as walking, running, cycling, or swimming
+                        that
+                        increase your heart rate and improve cardiovascular health.</li>
+                    <li><strong>Strength Training:</strong> Exercises that involve resistance, such as weightlifting
+                        or
+                        bodyweight exercises, to build muscle strength and endurance.</li>
+                    <li><strong>Flexibility Exercises:</strong> Stretching or yoga practices that enhance flexibility
+                        and
+                        range of motion.</li>
+                    <li><strong>Mind-Body Exercises:</strong> Activities like tai chi or Pilates that combine physical
+                        movement with mental focus and relaxation.</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="Visualization" class="tab-content" style="margin-top: 30px;">
+            <h1>Visualization or Guided Imagery</h1>
+            <p>Visualization, also known as guided imagery, is a relaxation technique that involves creating
+                mental images to promote a sense of calm and well-being. By imagining peaceful and positive
+                scenarios, individuals can reduce stress, enhance focus, and improve overall mental health.</p>
+            <div style="text-align: left;">
+                <p>Steps:</p>
+                <ol>
+                    <li><strong>Find a Quiet Space:</strong> Sit or lie down in a comfortable position in a quiet
+                        environment.</li>
+                    <li><strong>Close Your Eyes:</strong> Gently close your eyes to minimize distractions.</li>
+                    <li><strong>Choose a Scene:</strong> Imagine a peaceful place, such as a beach, forest, or
+                        garden.
+                        Focus on the details of this scene.</li>
+                    <li><strong>Engage Your Senses:</strong> Visualize the sights, sounds, smells, and sensations
+                        of
+                        being in this place.</li>
+                    <li><strong>Breathe Deeply:</strong> Take slow, deep breaths as you immerse yourself in the
+                        imagery.</li>
+                    <li><strong>Return Slowly:</strong> When you are ready, slowly bring your awareness back to
+                        the
+                        present moment and open your eyes.</li>
+                </ol>
+            </div>
+        </div>
+
+
+        <div id="Social" class="tab-content" style="margin-top: 30px;">
+            <h1>Social Connection</h1>
+            <p>Social connection refers to the relationships and interactions we have with others, which play a
+                crucial role in our mental and emotional well-being. Building and maintaining strong social
+                connections can provide support, reduce feelings of loneliness, and enhance overall happiness.</p>
+            <div style="text-align: left;">
+                <p>Ways to Foster Social Connection:</p>
+                <ul>
+                    <li><strong>Reach Out to Friends and Family:</strong> Regularly connect with loved ones through
+                        phone calls, video chats, or in-person visits.</li>
+                    <li><strong>Join Social Groups or Clubs:</strong> Participate in activities or organizations
+                        that
+                        align with your interests to meet new people.</li>
+                    <li><strong>Volunteer:</strong> Engage in community service or volunteer work to build
+                        connections
+                        while contributing to a meaningful cause.</li>
+                    <li><strong>Attend Social Events:</strong> Attend gatherings, workshops, or social events to
+                        expand
+                        your social network.</li>
+                </ul>
+            </div>
+        </div>
+
+
+        <div id="Worry" class="tab-content" style="margin-top: 30px;">
+            <h1>Scheduled Worry Time</h1>
+            <p>Scheduled worry time is a cognitive-behavioral technique that involves setting aside a specific
+                period each day to focus on and address your worries. This practice helps contain anxious thoughts
+                to a designated time, reducing their impact on your daily life and promoting better emotional
+                regulation.</p>
+            <div style="text-align: left;">
+                <p>Steps:</p>
+                <ol>
+                    <li><strong>Choose a Time:</strong> Select a specific time of day (e.g., 15-30 minutes) to
+                        dedicate
+                        to worrying.</li>
+                    <li><strong>Create a Worry List:</strong> During this time, write down all your worries and
+                        concerns
+                        without judgment.</li>
+                    <li><strong>Problem-Solve:</strong> After listing your worries, consider possible solutions or
+                        coping strategies for each concern.</li>
+                    <li><strong>End the Session:</strong> Once the scheduled time is up, close your worry list and
+                        shift
+                        your focus to other activities.</li>
+                    <li><strong>Practice Regularly:</strong> Make scheduled worry time a daily habit to help manage
+                        anxiety effectively.</li>
+                </ol>
+            </div>
+
+        </div>
+
+
+        <div id="Meditation" class="tab-content" style="margin-top: 30px;">
+            <h1>Mindful Meditation</h1>
+            <p>Mindful meditation is a practice that involves focusing your attention on the present moment while
+                calmly acknowledging and accepting your thoughts, feelings, and bodily sensations. This practice
+                can help reduce stress, improve concentration, and enhance overall well-being.</p>
+            <div style="text-align: left;">
+                <p>Steps:</p>
+                <ol>
+                    <li><strong>Find a Quiet Space:</strong> Sit or lie down in a comfortable position in a quiet
+                        environment.</li>
+                    <li><strong>Focus on Your Breath:</strong> Bring your attention to your breath, noticing the
+                        sensation of each inhale and exhale.</li>
+                    <li><strong>Acknowledge Thoughts:</strong> When thoughts arise, gently acknowledge them without
+                        judgment and return your focus to your breath.</li>
+                    <li><strong>Body Awareness:</strong> You can also bring awareness to different parts of your
+                        body,
+                        noticing any sensations or tension.</li>
+                    <li><strong>Practice Regularly:</strong> Aim to meditate for a few minutes each day, gradually
+                        increasing the duration as you become more comfortable with the practice.</li>
+                </ol>
+            </div>
+
+
+            <div class="buttons">
+                <a href="https://checkout.headspace.com/checkout?voucherCode=B2C14DANNUAL2022&step=Warm-up"
+                    class="glass-btn" target="_blank">Headspace (Good for Meditation)</a>
+            </div>
+        </div>
+
+
+
+        <!-- Footer -->
+        <div class="buttons">
+            <a href="/" class="glass-btn">Go Back Home</a>
+        </div>
+    </div>
+
+    <script>
+        function openTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+
+            document.querySelectorAll('.tab-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+
+            document.getElementById(tabId).classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+
+</html>
